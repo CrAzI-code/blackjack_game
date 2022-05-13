@@ -51,8 +51,8 @@
                     <a href="{% url 'birth_certificate:contact' %}" class="nav-item nav-link">Contact</a>
                 </div>
             {% if user.is_authenticated %}
-                <a href="{% url '' %}" class="btn btn-primary px-4">{{user.username}}</a>
-                <a href="{% url 'birth_certificate:register' %}" class="btn btn-primary px-4">Logout</a>
+                <a href="#" class="btn btn-primary px-4">{{user.username}}</a>
+                <a href="{% url 'birth_certificate:logout' %}" class="btn btn-primary px-4">Logout</a>
             {% else %}
             <a href="{% url 'birth_certificate:login' %}" class="btn btn-primary px-4">Login</a>
             <a href="{% url 'birth_certificate:register' %}" class="btn btn-primary px-4">Register</a>

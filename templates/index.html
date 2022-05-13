@@ -11,6 +11,16 @@
     <!-- Header Start -->
     <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
         <div class="row align-items-center px-3">
+
+            {% if user.is_authenticated %}
+            <div class="col-lg-6 text-center text-lg-left">
+                <h4 class="text-white mb-4 mt-5 mt-lg-0">Birth Certification Center</h4>
+                <h1 class="display-3 font-weight-bold text-white">Dear {{user.username}},</h1>
+                <p class="text-white mb-4" style="font-size:30px;"> You can now generate your birth certificate.</p>
+                <a href="" class="btn btn-secondary mt-1 py-3 px-5">Generate Certificate</a>
+                <a href="" class="btn btn-secondary mt-1 py-3 px-5" style="background:green">Confirm payment</a>
+            </div>
+            {% else %}
             <div class="col-lg-6 text-center text-lg-left">
                 <h4 class="text-white mb-4 mt-5 mt-lg-0">Birth Certification Center</h4>
                 <h1 class="display-3 font-weight-bold text-white">New Approach to Birth Registration and Certification</h1>
@@ -18,7 +28,9 @@
                     Ipsum dolor no justo dolor et, lorem ut dolor erat dolore sed ipsum at ipsum nonumy amet. Clita
                     lorem dolore sed stet et est justo dolore.</p>
                 <a href="" class="btn btn-secondary mt-1 py-3 px-5">Learn More</a>
+                
             </div>
+            {% endif %}
             <div class="col-lg-6 text-center text-lg-right">
                 <img class="img-fluid mt-5" src="{% static 'assets/img/header.png' %}" alt="">
             </div>
