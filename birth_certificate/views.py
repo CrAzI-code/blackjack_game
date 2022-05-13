@@ -53,7 +53,7 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('')
+            return redirect('birth_certificate:index')
         else:
             messages.info(request, "invalid username or password")
             return redirect("birth_certificate:login")
