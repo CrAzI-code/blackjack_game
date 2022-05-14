@@ -1,0 +1,124 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+    {% block content %}
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+            <br>
+            <h3 class="display-3 font-weight-bold text-white">Birth Certification Form</h3>
+
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10" style="position:center; margin:auto">
+
+
+
+
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h5>Personal Info:</h5>
+                        </div>
+                        <div class="card-body">
+                            <form action="" method="post">
+
+                                {% csrf_token %} 
+                
+                                 <div class="form-row ">
+                                   <div class="form-group col-lg-6">
+                                     <label for="inputEmail4">Full Name</label>
+                                     <input type="text" class="form-control" id="inputEmail4" placeholder="Full Name">
+                                   </div>
+                                   <div class="form-group col-md-6">
+                                     <label for="inputPassword4">Father's Name</label>
+                                     <input type="text" class="form-control" id="inputPassword4" placeholder="Father's Name">
+                                   </div>
+                                 </div>
+                
+                                  <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">Gender</label>
+                                        <select id="inputState" class="form-control">
+                                          <option selected>Male</option>
+                                          <option>Female</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-md-2">
+        
+                                      </div>
+                                    <div class="form-group col-md-6" >
+                                      <label for="inputPassword4">Mother's Name</label>
+                                      <input type="text" class="form-control" id="inputPassword4" placeholder="Mothers Name">
+                                    </div>
+                                  </div>
+        
+                                  <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="inputEmail4">Place Of Birth</label>
+                                      <input type="text" class="form-control" id="inputEmail4" placeholder="Place Of Birth">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                      <label for="inputPassword4">State</label>
+                                      <input type="text" class="form-control" id="inputPassword4" placeholder="State">
+                                    </div>
+                                  </div>
+        
+                                  <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="inputEmail4">Time Of Birth</label>
+                                      <input type="text" class="form-control" id="inputEmail4" placeholder="Time">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                      <label for="inputPassword4">Day Of Birth</label>
+                                      <input type="text" class="form-control" id="inputPassword4" placeholder="Day Of Birth">
+                                    </div>
+                                  </div>
+        
+                                  <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                      <label for="inputEmail4">Month Of Birth</label>
+                                      <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                      <label for="inputPassword4">Year Of Birth</label>
+                                      <input type="text" class="form-control" id="inputPassword4" placeholder="Password">
+                                    </div>
+                                  </div>
+                                 <br>
+                             <div style=" float:right;" >
+                                 <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton"  style="background:green" >Generate Birth Certificate</button>
+                             </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-muted">
+                         Please make sure all the above information are correct
+                        </div>
+                      </div>
+
+
+
+                    
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+         
+            <br>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+   
+
+    {% endblock content %}

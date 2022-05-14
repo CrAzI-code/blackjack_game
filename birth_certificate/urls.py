@@ -9,5 +9,6 @@ urlpatterns = [
     path('contact/', views.contact, name="contact"),    
     path('register/', views.register, name="register"),
     path('login/', views.login, name="login"),
+    path('generate_certificate/', views.generate, name="generate"),
     path('logout/', views.logout, name="logout")
     ]

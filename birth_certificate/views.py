@@ -61,6 +61,11 @@ def login(request):
     else:
         return render(request, 'login.html')
 
+def generate(request):
+
+
+    return render(request, "generate_certificate.html")
+
 def logout(request):
     auth.logout(request)
     return redirect( 'birth_certificate:index')
