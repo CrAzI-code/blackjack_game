@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 
+from birth_certificate.models import PersonalData
+
 # Create your views here.
 
 def index(request):
@@ -62,9 +64,22 @@ def login(request):
         return render(request, 'login.html')
 
 def generate(request):
+    if request.method == 'POST':
+        fullname = request.POST['fullname']
+        fathername = request.POST['fathername']
+        gender = request.POST['gender']
+        mothername = request.POST['mothername']
+        place_of_birth = request.POST['placeofbirth']
+        state = request.POST['state']
+        time = request.POST['time']
+        date = request.POST['date']
 
-
-    return render(request, "generate_certificate.html")
+        userPersonalData = PersonalData(fullname = fullname, fathername = fathername, gender = gender, mothername = mothername, place_of_birth = place_of_birth, state = state, time = time, date = date)
+        userPersonalData.save()
+        messages.info(request, "Data Saved")
+        return redirect('birth_certificate:generate')
+    else:
+        return render(request, "generate_certificate.html")
 
 def logout(request):
     auth.logout(request)
