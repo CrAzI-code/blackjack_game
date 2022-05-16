@@ -20,8 +20,16 @@
             <div class="row align-items-center">
                 <div class="col-lg-10" style="position:center; margin:auto">
 
+
+                    
                     {% for message in messages  %}
-                    <h1>{{ message }}</h1>
+                    <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Success!!!</div>
+                        <div class="card-body">
+                          <h5 class="card-title">{{ message }}</h5>
+                          
+                        </div>
+                      </div>
                     {% endfor %}
 
                     <div class="card text-center">

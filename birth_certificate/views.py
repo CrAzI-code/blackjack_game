@@ -76,7 +76,7 @@ def generate(request):
 
         userPersonalData = PersonalData(fullname = fullname, fathername = fathername, gender = gender, mothername = mothername, place_of_birth = place_of_birth, state = state, time = time, date = date)
         userPersonalData.save()
-        messages.info(request, "Data Saved")
+        messages.info(request, "User Data Has Been Saved Successfully")
         return redirect('birth_certificate:generate')
     else:
         return render(request, "generate_certificate.html")
