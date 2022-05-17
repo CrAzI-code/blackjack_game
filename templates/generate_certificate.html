@@ -1,4 +1,5 @@
 
+  
 
 {% extends 'base.html' %}
 
@@ -8,6 +9,7 @@
 
     {% block content %}
 
+    {% if user.is_authenticated %}
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary mb-5">
@@ -118,9 +120,15 @@
             <br>
         </div>
     </div>
-    <!-- Header End -->
+<!-- 
+    {% else %}
+   
+    <h1 style="text-align: center;">Access Denied</h1> -->
+
+    {% endif %}
+
+    {% endblock content %}
 
 
    
-
-    {% endblock content %}
+      

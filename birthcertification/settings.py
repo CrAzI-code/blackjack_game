@@ -26,7 +26,14 @@ SECRET_KEY = 'django-insecure-t$_m4d5leju+2m8k&8-me3i908^p(_eyt=+7*+3vmhj&3gbjh@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'lazbentechs.xyz'
+EMAIL_HOST_USER = 'electricity@lazbentechs.xyz'
+EMAIL_HOST_PASSWORD = '200lazben900'
+EMAIL_PORT = '465'
+
 ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -56,7 +63,7 @@ ROOT_URLCONF = 'birthcertification.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, 'templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
