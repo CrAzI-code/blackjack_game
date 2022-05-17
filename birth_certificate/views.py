@@ -4,11 +4,17 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 
-from birth_certificate.models import PersonalData
+from birth_certificate.models import PaymentToken, PersonalData
 
 # Create your views here.
 
 def index(request):
+    if request.method == "POST":
+        token = request.POST['token']
+        if PaymentToken.objects.filter(token=token).exists():
+            return render(request, "index.html", {"success": True, "token": token})
+        else:
+            return render(request, "index.html", {"success": False})
     return render(request, "index.html")
 
 def about(request):
@@ -28,7 +34,6 @@ def register(request):
         password2 = request.POST['password2']
 
         if password == password2:
-
             if User.objects.filter(email=email).exists():
                 messages.info(request, 'email already exist')
                 return redirect('birth_certificate:register')
@@ -38,7 +43,8 @@ def register(request):
             else:
                 user = User.objects.create_user(username = username, email = email, password = password)
                 user.save();
-                return redirect('birth_certificate:login')
+                auth.authenticate(username=username, password=password)
+                return redirect('birth_certificate:index')
         else:
             messages.info(request, 'Password not the same')
             return redirect('birth_certificate:register')
@@ -64,6 +70,7 @@ def login(request):
         return render(request, 'login.html')
 
 def generate(request):
+    print(request.user)
     if request.method == 'POST':
         fullname = request.POST['fullname']
         fathername = request.POST['fathername']
