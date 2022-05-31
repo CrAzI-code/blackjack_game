@@ -8,6 +8,14 @@ let messageEl = document.getElementById("message-el")
 sumEl = document.getElementById("sum-el")
 cardEl = document.getElementById("card")
 
+playerEl = document.getElementById("player-el")
+let player = {
+    name : 'benedore',
+    price : 140
+}
+playerEl.textContent =player.name+ ":" + 0
+
+
 
 
 function getRandomNumber(){
@@ -39,6 +47,9 @@ function renderGame(){
     }else if(sum === 21 ) {
         message = "your have won"
         hasBlackJack = true
+        
+        
+        playerEl.textContent = player.name + " $" +player.price
     } else {
         message = "you just lost the game"
         isAlive = false
