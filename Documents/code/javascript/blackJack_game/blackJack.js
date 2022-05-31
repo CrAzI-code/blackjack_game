@@ -53,6 +53,7 @@ function renderGame(){
 
 }
 
+
 function newCard(){
     if(isAlive & sum !=21 ){
         let card = getRandomNumber()
